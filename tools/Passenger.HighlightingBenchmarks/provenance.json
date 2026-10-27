@@ -17,5 +17,42 @@
   },
   "rounds": 3,
   "instrumentedRounds": 3,
-  "buildProperty": "PassengerBenchmarkOnly=true skips copying the unused web-language-server bundle in both checkouts; no server runs in the harness."
+  "buildProperty": "PassengerBenchmarkOnly=true skips copying the unused web-language-server bundle in both checkouts; no server runs in the harness.",
+  "uninstrumentedHarnessCommit": "22438c9d816ef3811d1b40f81d787e29086188ff",
+  "measuredAtUtc": "2026-10-27",
+  "uninstrumentedBinaries": {
+    "textmatesharp": {
+      "TextMateSharp.dll": "989bf40e3bea1c3d26636f115171175cd2efd0945829148954e3219514b4ecb9",
+      "Passenger.Languages.dll": "d03bdd7b25667ae213a7b40eb41cd1a02d5d583aa32bd55bfa64d5cc2e8aad31",
+      "Onigwrap.dll": "692899f8a9fbda37b309d88f982f25820195fcd88f9b5b99a373fa61a496907c",
+      "Passenger.HighlightingBenchmarks.dll": "479b9c8d3f231bd522aa92ef4ac6a987f63637b56a38e33ae38a87b458ed626a"
+    },
+    "tint": {
+      "GregsEx.dll": "a774b58d202bee22340647e4ddd5a93e5f23459fc5a0e54fab31e84ba5b917eb",
+      "Tint.dll": "97b322c4327e6c641f694013a76961f70c4e9969a6cf0d029afd525718aef53c",
+      "Passenger.Languages.dll": "061d53cab8fcfbc50d9c323e05554f8a7bfe671eb38c829b0a32ed19cbdb7b36",
+      "Passenger.HighlightingBenchmarks.dll": "eb963f01988f1872d46490902f94455b90f0956f0150f2ba61ac5e2ac46933c9"
+    }
+  },
+  "runtime": ".NET 11.0.0-rc.3.26522.148",
+  "os": "macOS 15.8.1",
+  "architecture": "Arm64",
+  "instrumentedBinaries": {
+    "textmatesharp": {
+      "TextMateSharp.dll": "989bf40e3bea1c3d26636f115171175cd2efd0945829148954e3219514b4ecb9",
+      "Passenger.Languages.dll": "bd58e25822b0744d849d9c1ea664f0628cd26295cf166a35aeb4ac3e570bc0fe",
+      "Onigwrap.dll": "692899f8a9fbda37b309d88f982f25820195fcd88f9b5b99a373fa61a496907c",
+      "Passenger.HighlightingBenchmarks.dll": "3e8958c784e784b300466adb8595e0be82bae902720fdb34d9668862119b59a9"
+    },
+    "tint": {
+      "GregsEx.dll": "a774b58d202bee22340647e4ddd5a93e5f23459fc5a0e54fab31e84ba5b917eb",
+      "Tint.dll": "97b322c4327e6c641f694013a76961f70c4e9969a6cf0d029afd525718aef53c",
+      "Passenger.Languages.dll": "0d880c7b894bb76f438c98a99595db4ea9197891b5c32ea1c1a594c4a5adf8c7",
+      "Passenger.HighlightingBenchmarks.dll": "d04f1a41b7acb3e9a40dbe33cf510638727d83b02c00725effc1925a79e24fff"
+    }
+  },
+  "hardware": {
+    "cpu": "Apple M4 Pro",
+    "memoryBytes": 51539607552
+  }
 }

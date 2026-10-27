@@ -9,7 +9,7 @@ See [current tables](tables.md), the [PR tables](pr-tables.md), and [stage attri
 - Upstream: `Zaneris/passenger` commit `fa86d9d42dbb53a8067f06f212d80d09540a3fe4`.
 - Baseline: TextMateSharp 2.0.4 and its pinned Onigwrap dependency.
 - Candidate production commit: `9c5b2d034f6385d5888bea59a0e9cd4d90ba1e47`, which merges that same upstream and preserves per-pass buffer reuse. Tint 0.1.2 (source commit `b72ea69c28cf5ef3d919bd7f625c5da24c9ccb37`) with GregsEx 0.5.3.
-- Release build, .NET SDK `11.0.100-rc.3.26522.148`, runtime `11.0.0-rc.3.26522.148`, macOS 15.8, arm64, Apple M4 Pro, 48 GiB RAM.
+- Release build, .NET SDK `11.0.100-rc.3.26522.148`, runtime `11.0.0-rc.3.26522.148`, macOS 15.8.1, arm64, Apple M4 Pro, 48 GiB RAM.
 - Tint loads Passenger's existing embedded grammar JSON, recursively registering dependencies. No bundled Tint grammars, generated kernels, or hot-pattern compilation are used.
 - Existing scope-to-TokenKind mapping, grammar normalization, YAML key policy, per-grammar locking, long-line cutoff, one-second line budget, background scheduling, and incremental line tables are retained. C# still uses Roslyn.
 
@@ -56,3 +56,5 @@ Both checkouts use `PassengerBenchmarkOnly=true` with the one-line condition in 
 `provenance.json` identifies production revisions, SDK and fixture checksums. `baseline.packages.lock.json` is the harness lock for TextMateSharp; the normal `packages.lock.json` is the harness lock for Tint. All production lock files remain those of their respective commits.
 
 For total measurements, use the uninstrumented harness commit recorded in `provenance.json`. For tokenizer measurements, copy `HighlightingEventSource.cs` and apply `instrument.py CHECKOUT` to each uninstrumented checkout, then rebuild both. The instrumentation script supports the new reusable line buffer. Run the same runner with `--instrument --cases xml.props,css.css,javascript.js,less.less --output diagnostic-results`, retaining the default three rounds. `summarize-diagnostics.py` reports medians of process medians. Diagnostic runs are separate from total measurements; their overhead is not calibrated.
+
+`baseline-instrumentation.patch` preserves the exact baseline changes as a zero-context patch (apply to the pinned baseline with `git apply --unidiff-zero`); the instrumentation script is the preferred reproducible path.

@@ -1,0 +1,785 @@
+{
+  "runtime": ".NET 11.0.0-rc.3.26522.148",
+  "os": "macOS 15.8.1",
+  "architecture": "Arm64",
+  "source": "/private/tmp/passenger-fresh-tint/tools/Passenger.HighlightingBenchmarks/fixtures/javascript.js",
+  "inputSha256": "7D3A863EE7D4092AD8EB1B3A3BF8A6725C8A8BF9C3438212432D1DD95371712A",
+  "characters": 418412,
+  "lines": 9919,
+  "colourHash": "42805787082A52537FE66956E03238462BC08174479323572EAB0614E6C21820",
+  "samples": [
+    {
+      "phase": "cold",
+      "wallMs": 1981.2251,
+      "cpuMs": 2105.58,
+      "allocatedBytes": 160894768,
+      "retainedBytes": 3366912,
+      "workingSetBytes": 115589120,
+      "peakWorkingSetBytes": 0,
+      "gc": [
+        19,
+        0,
+        0
+      ],
+      "lines": 9919,
+      "workerMs": 1971.5865
+    },
+    {
+      "phase": "warmup",
+      "wallMs": 1658.6852,
+      "cpuMs": 1700.431,
+      "allocatedBytes": 153374712,
+      "retainedBytes": 3880,
+      "workingSetBytes": 119160832,
+      "peakWorkingSetBytes": 0,
+      "gc": [
+        18,
+        1,
+        0
+      ],
+      "lines": 9919,
+      "workerMs": 1658.586
+    },
+    {
+      "phase": "warmup",
+      "wallMs": 1652.4905,
+      "cpuMs": 1699.068,
+      "allocatedBytes": 153370656,
+      "retainedBytes": 3144,
+      "workingSetBytes": 122880000,
+      "peakWorkingSetBytes": 0,
+      "gc": [
+        18,
+        1,
+        0
+      ],
+      "lines": 9919,
+      "workerMs": 1652.4123
+    },
+    {
+      "phase": "warm",
+      "wallMs": 1660.3073,
+      "cpuMs": 1698.954,
+      "allocatedBytes": 153371744,
+      "retainedBytes": 3424,
+      "workingSetBytes": 122683392,
+      "peakWorkingSetBytes": 0,
+      "gc": [
+        18,
+        1,
+        0
+      ],
+      "lines": 9919,
+      "workerMs": 1660.2482
+    },
+    {
+      "phase": "warm",
+      "wallMs": 1655.7741,
+      "cpuMs": 1689.555,
+      "allocatedBytes": 153371008,
+      "retainedBytes": 3144,
+      "workingSetBytes": 123224064,
+      "peakWorkingSetBytes": 0,
+      "gc": [
+        18,
+        1,
+        0
+      ],
+      "lines": 9919,
+      "workerMs": 1655.7034
+    },
+    {
+      "phase": "warm",
+      "wallMs": 1675.2044,
+      "cpuMs": 1705.563,
+      "allocatedBytes": 153372672,
+      "retainedBytes": 3144,
+      "workingSetBytes": 122765312,
+      "peakWorkingSetBytes": 0,
+      "gc": [
+        18,
+        1,
+        0
+      ],
+      "lines": 9919,
+      "workerMs": 1675.148
+    },
+    {
+      "phase": "warm",
+      "wallMs": 1689.0321,
+      "cpuMs": 1724.137,
+      "allocatedBytes": 153375376,
+      "retainedBytes": 3144,
+      "workingSetBytes": 124092416,
+      "peakWorkingSetBytes": 0,
+      "gc": [
+        18,
+        1,
+        0
+      ],
+      "lines": 9919,
+      "workerMs": 1688.978
+    },
+    {
+      "phase": "warm",
+      "wallMs": 1674.603,
+      "cpuMs": 1704.58,
+      "allocatedBytes": 153372880,
+      "retainedBytes": 3144,
+      "workingSetBytes": 123617280,
+      "peakWorkingSetBytes": 0,
+      "gc": [
+        18,
+        1,
+        0
+      ],
+      "lines": 9919,
+      "workerMs": 1674.5414
+    },
+    {
+      "phase": "warm",
+      "wallMs": 1666.0644,
+      "cpuMs": 1696.46,
+      "allocatedBytes": 153372928,
+      "retainedBytes": 3704,
+      "workingSetBytes": 124141568,
+      "peakWorkingSetBytes": 0,
+      "gc": [
+        18,
+        1,
+        0
+      ],
+      "lines": 9919,
+      "workerMs": 1665.9934
+    },
+    {
+      "phase": "warm",
+      "wallMs": 1667.8789,
+      "cpuMs": 1701.652,
+      "allocatedBytes": 153372184,
+      "retainedBytes": 3144,
+      "workingSetBytes": 124289024,
+      "peakWorkingSetBytes": 0,
+      "gc": [
+        18,
+        1,
+        0
+      ],
+      "lines": 9919,
+      "workerMs": 1667.8047
+    },
+    {
+      "phase": "edit-warmup",
+      "wallMs": 0.131647,
+      "cpuMs": 0.23437000000000002,
+      "allocatedBytes": 23324.88,
+      "lines": 1,
+      "workerMs": 0.10132
+    },
+    {
+      "phase": "edit",
+      "wallMs": 0.10991400000000001,
+      "cpuMs": 0.20345,
+      "allocatedBytes": 23320.16,
+      "lines": 1,
+      "workerMs": 0.09576499999999999
+    },
+    {
+      "phase": "edit",
+      "wallMs": 0.110685,
+      "cpuMs": 0.20428999999999997,
+      "allocatedBytes": 23326.4,
+      "lines": 1,
+      "workerMs": 0.094918
+    },
+    {
+      "phase": "edit",
+      "wallMs": 0.11155,
+      "cpuMs": 0.20562000000000002,
+      "allocatedBytes": 23324.32,
+      "lines": 1,
+      "workerMs": 0.095742
+    },
+    {
+      "phase": "edit",
+      "wallMs": 0.111703,
+      "cpuMs": 0.20681999999999998,
+      "allocatedBytes": 23330.56,
+      "lines": 1,
+      "workerMs": 0.095213
+    },
+    {
+      "phase": "edit",
+      "wallMs": 0.11285500000000001,
+      "cpuMs": 0.20823,
+      "allocatedBytes": 23324.32,
+      "lines": 1,
+      "workerMs": 0.09505100000000001
+    }
+  ],
+  "diagnostics": {
+    "Frequency": 1000000000,
+    "Groups": {
+      "pass-0/Publication": {
+        "Count": 28,
+        "Totals": {
+          "Final": 1,
+          "QueueTicks": 892751,
+          "CallbackTicks": 339835,
+          "CallbackAllocatedBytes": 2304,
+          "SinceScheduledTicks": 30933753757
+        }
+      },
+      "pass-0/Pass": {
+        "Count": 1,
+        "Totals": {
+          "Initial": 1,
+          "WorkerQueueTicks": 1241667,
+          "WorkerTicks": 1971653167,
+          "WorkerAllocatedBytes": 160400416,
+          "GrammarTicks": 23486583,
+          "GrammarAllocatedBytes": 4933768,
+          "LockWaitTicks": 24002,
+          "TokenizerTicks": 1927856211,
+          "TokenizerAllocatedBytes": 154517392,
+          "LinePreparationTicks": 12664737,
+          "LinePreparationAllocatedBytes": 441040,
+          "OtherWorkerTicks": 7621634,
+          "OtherWorkerAllocatedBytes": 508216,
+          "ReadLines": 9919,
+          "SkippedLines": 0,
+          "StoppedLines": 0,
+          "UnknownStopStatusLines": 9919,
+          "DocumentLines": 9919,
+          "StaleFrom": 9919,
+          "Complete": 1
+        }
+      },
+      "pass-1/Publication": {
+        "Count": 26,
+        "Totals": {
+          "Final": 1,
+          "QueueTicks": 260999,
+          "CallbackTicks": 33710,
+          "CallbackAllocatedBytes": 2144,
+          "SinceScheduledTicks": 22579179749
+        }
+      },
+      "pass-1/Pass": {
+        "Count": 1,
+        "Totals": {
+          "Initial": 1,
+          "WorkerQueueTicks": 17458,
+          "WorkerTicks": 1658591917,
+          "WorkerAllocatedBytes": 153089536,
+          "GrammarTicks": 417,
+          "GrammarAllocatedBytes": 0,
+          "LockWaitTicks": 1874,
+          "TokenizerTicks": 1653490579,
+          "TokenizerAllocatedBytes": 152226904,
+          "LinePreparationTicks": 4695928,
+          "LinePreparationAllocatedBytes": 441040,
+          "OtherWorkerTicks": 403119,
+          "OtherWorkerAllocatedBytes": 421592,
+          "ReadLines": 9919,
+          "SkippedLines": 0,
+          "StoppedLines": 0,
+          "UnknownStopStatusLines": 9919,
+          "DocumentLines": 9919,
+          "StaleFrom": 9919,
+          "Complete": 1
+        }
+      },
+      "pass-2/Publication": {
+        "Count": 26,
+        "Totals": {
+          "Final": 1,
+          "QueueTicks": 262999,
+          "CallbackTicks": 14832,
+          "CallbackAllocatedBytes": 1248,
+          "SinceScheduledTicks": 22428953366
+        }
+      },
+      "pass-2/Pass": {
+        "Count": 1,
+        "Totals": {
+          "Initial": 1,
+          "WorkerQueueTicks": 14875,
+          "WorkerTicks": 1652421541,
+          "WorkerAllocatedBytes": 153089536,
+          "GrammarTicks": 416,
+          "GrammarAllocatedBytes": 0,
+          "LockWaitTicks": 1667,
+          "TokenizerTicks": 1647427618,
+          "TokenizerAllocatedBytes": 152226904,
+          "LinePreparationTicks": 4638820,
+          "LinePreparationAllocatedBytes": 441040,
+          "OtherWorkerTicks": 353020,
+          "OtherWorkerAllocatedBytes": 421592,
+          "ReadLines": 9919,
+          "SkippedLines": 0,
+          "StoppedLines": 0,
+          "UnknownStopStatusLines": 9919,
+          "DocumentLines": 9919,
+          "StaleFrom": 9919,
+          "Complete": 1
+        }
+      },
+      "pass-3/Publication": {
+        "Count": 26,
+        "Totals": {
+          "Final": 1,
+          "QueueTicks": 223876,
+          "CallbackTicks": 5123,
+          "CallbackAllocatedBytes": 688,
+          "SinceScheduledTicks": 22566100866
+        }
+      },
+      "pass-3/Pass": {
+        "Count": 1,
+        "Totals": {
+          "Initial": 1,
+          "WorkerQueueTicks": 11791,
+          "WorkerTicks": 1660250209,
+          "WorkerAllocatedBytes": 153089536,
+          "GrammarTicks": 334,
+          "GrammarAllocatedBytes": 0,
+          "LockWaitTicks": 2129,
+          "TokenizerTicks": 1655269885,
+          "TokenizerAllocatedBytes": 152226904,
+          "LinePreparationTicks": 4669344,
+          "LinePreparationAllocatedBytes": 441040,
+          "OtherWorkerTicks": 308517,
+          "OtherWorkerAllocatedBytes": 421592,
+          "ReadLines": 9919,
+          "SkippedLines": 0,
+          "StoppedLines": 0,
+          "UnknownStopStatusLines": 9919,
+          "DocumentLines": 9919,
+          "StaleFrom": 9919,
+          "Complete": 1
+        }
+      },
+      "pass-4/Publication": {
+        "Count": 26,
+        "Totals": {
+          "Final": 1,
+          "QueueTicks": 209463,
+          "CallbackTicks": 5997,
+          "CallbackAllocatedBytes": 688,
+          "SinceScheduledTicks": 22420251825
+        }
+      },
+      "pass-4/Pass": {
+        "Count": 1,
+        "Totals": {
+          "Initial": 1,
+          "WorkerQueueTicks": 14541,
+          "WorkerTicks": 1655706125,
+          "WorkerAllocatedBytes": 153089536,
+          "GrammarTicks": 459,
+          "GrammarAllocatedBytes": 0,
+          "LockWaitTicks": 2168,
+          "TokenizerTicks": 1650754797,
+          "TokenizerAllocatedBytes": 152226904,
+          "LinePreparationTicks": 4650111,
+          "LinePreparationAllocatedBytes": 441040,
+          "OtherWorkerTicks": 298590,
+          "OtherWorkerAllocatedBytes": 421592,
+          "ReadLines": 9919,
+          "SkippedLines": 0,
+          "StoppedLines": 0,
+          "UnknownStopStatusLines": 9919,
+          "DocumentLines": 9919,
+          "StaleFrom": 9919,
+          "Complete": 1
+        }
+      },
+      "pass-5/Publication": {
+        "Count": 26,
+        "Totals": {
+          "Final": 1,
+          "QueueTicks": 194787,
+          "CallbackTicks": 5837,
+          "CallbackAllocatedBytes": 688,
+          "SinceScheduledTicks": 22673562157
+        }
+      },
+      "pass-5/Pass": {
+        "Count": 1,
+        "Totals": {
+          "Initial": 1,
+          "WorkerQueueTicks": 12916,
+          "WorkerTicks": 1675149834,
+          "WorkerAllocatedBytes": 153089536,
+          "GrammarTicks": 417,
+          "GrammarAllocatedBytes": 0,
+          "LockWaitTicks": 1834,
+          "TokenizerTicks": 1670168334,
+          "TokenizerAllocatedBytes": 152226904,
+          "LinePreparationTicks": 4685643,
+          "LinePreparationAllocatedBytes": 441040,
+          "OtherWorkerTicks": 293606,
+          "OtherWorkerAllocatedBytes": 421592,
+          "ReadLines": 9919,
+          "SkippedLines": 0,
+          "StoppedLines": 0,
+          "UnknownStopStatusLines": 9919,
+          "DocumentLines": 9919,
+          "StaleFrom": 9919,
+          "Complete": 1
+        }
+      },
+      "pass-6/Publication": {
+        "Count": 26,
+        "Totals": {
+          "Final": 1,
+          "QueueTicks": 218374,
+          "CallbackTicks": 7418,
+          "CallbackAllocatedBytes": 688,
+          "SinceScheduledTicks": 22933377282
+        }
+      },
+      "pass-6/Pass": {
+        "Count": 1,
+        "Totals": {
+          "Initial": 1,
+          "WorkerQueueTicks": 10833,
+          "WorkerTicks": 1688979792,
+          "WorkerAllocatedBytes": 153089536,
+          "GrammarTicks": 417,
+          "GrammarAllocatedBytes": 0,
+          "LockWaitTicks": 2460,
+          "TokenizerTicks": 1683907733,
+          "TokenizerAllocatedBytes": 152226904,
+          "LinePreparationTicks": 4750110,
+          "LinePreparationAllocatedBytes": 441040,
+          "OtherWorkerTicks": 319072,
+          "OtherWorkerAllocatedBytes": 421592,
+          "ReadLines": 9919,
+          "SkippedLines": 0,
+          "StoppedLines": 0,
+          "UnknownStopStatusLines": 9919,
+          "DocumentLines": 9919,
+          "StaleFrom": 9919,
+          "Complete": 1
+        }
+      },
+      "pass-7/Publication": {
+        "Count": 26,
+        "Totals": {
+          "Final": 1,
+          "QueueTicks": 202874,
+          "CallbackTicks": 6042,
+          "CallbackAllocatedBytes": 688,
+          "SinceScheduledTicks": 22706992135
+        }
+      },
+      "pass-7/Pass": {
+        "Count": 1,
+        "Totals": {
+          "Initial": 1,
+          "WorkerQueueTicks": 9542,
+          "WorkerTicks": 1674543125,
+          "WorkerAllocatedBytes": 153089536,
+          "GrammarTicks": 292,
+          "GrammarAllocatedBytes": 0,
+          "LockWaitTicks": 2250,
+          "TokenizerTicks": 1669566517,
+          "TokenizerAllocatedBytes": 152226904,
+          "LinePreparationTicks": 4684094,
+          "LinePreparationAllocatedBytes": 441040,
+          "OtherWorkerTicks": 289972,
+          "OtherWorkerAllocatedBytes": 421592,
+          "ReadLines": 9919,
+          "SkippedLines": 0,
+          "StoppedLines": 0,
+          "UnknownStopStatusLines": 9919,
+          "DocumentLines": 9919,
+          "StaleFrom": 9919,
+          "Complete": 1
+        }
+      },
+      "pass-8/Publication": {
+        "Count": 26,
+        "Totals": {
+          "Final": 1,
+          "QueueTicks": 219377,
+          "CallbackTicks": 8626,
+          "CallbackAllocatedBytes": 688,
+          "SinceScheduledTicks": 22640306752
+        }
+      },
+      "pass-8/Pass": {
+        "Count": 1,
+        "Totals": {
+          "Initial": 1,
+          "WorkerQueueTicks": 12208,
+          "WorkerTicks": 1665998667,
+          "WorkerAllocatedBytes": 153089536,
+          "GrammarTicks": 334,
+          "GrammarAllocatedBytes": 0,
+          "LockWaitTicks": 2249,
+          "TokenizerTicks": 1661001617,
+          "TokenizerAllocatedBytes": 152226904,
+          "LinePreparationTicks": 4661821,
+          "LinePreparationAllocatedBytes": 441040,
+          "OtherWorkerTicks": 332646,
+          "OtherWorkerAllocatedBytes": 421592,
+          "ReadLines": 9919,
+          "SkippedLines": 0,
+          "StoppedLines": 0,
+          "UnknownStopStatusLines": 9919,
+          "DocumentLines": 9919,
+          "StaleFrom": 9919,
+          "Complete": 1
+        }
+      },
+      "pass-9/Publication": {
+        "Count": 26,
+        "Totals": {
+          "Final": 1,
+          "QueueTicks": 204337,
+          "CallbackTicks": 10539,
+          "CallbackAllocatedBytes": 856,
+          "SinceScheduledTicks": 22642627792
+        }
+      },
+      "pass-9/Pass": {
+        "Count": 1,
+        "Totals": {
+          "Initial": 1,
+          "WorkerQueueTicks": 11708,
+          "WorkerTicks": 1667809709,
+          "WorkerAllocatedBytes": 153089536,
+          "GrammarTicks": 834,
+          "GrammarAllocatedBytes": 0,
+          "LockWaitTicks": 2420,
+          "TokenizerTicks": 1662807458,
+          "TokenizerAllocatedBytes": 152226904,
+          "LinePreparationTicks": 4683100,
+          "LinePreparationAllocatedBytes": 441040,
+          "OtherWorkerTicks": 315897,
+          "OtherWorkerAllocatedBytes": 421592,
+          "ReadLines": 9919,
+          "SkippedLines": 0,
+          "StoppedLines": 0,
+          "UnknownStopStatusLines": 9919,
+          "DocumentLines": 9919,
+          "StaleFrom": 9919,
+          "Complete": 1
+        }
+      },
+      "edits-0/Pass": {
+        "Count": 100,
+        "Totals": {
+          "Initial": 0,
+          "WorkerQueueTicks": 394289,
+          "WorkerTicks": 10139251,
+          "WorkerAllocatedBytes": 1300800,
+          "GrammarTicks": 10835,
+          "GrammarAllocatedBytes": 0,
+          "LockWaitTicks": 4293,
+          "TokenizerTicks": 9584288,
+          "TokenizerAllocatedBytes": 192800,
+          "LinePreparationTicks": 57381,
+          "LinePreparationAllocatedBytes": 37600,
+          "OtherWorkerTicks": 482454,
+          "OtherWorkerAllocatedBytes": 1070400,
+          "ReadLines": 100,
+          "SkippedLines": 0,
+          "StoppedLines": 0,
+          "UnknownStopStatusLines": 100,
+          "DocumentLines": 991900,
+          "StaleFrom": 991900,
+          "Complete": 100
+        }
+      },
+      "edits-0/Publication": {
+        "Count": 100,
+        "Totals": {
+          "Final": 100,
+          "QueueTicks": 487583,
+          "CallbackTicks": 54875,
+          "CallbackAllocatedBytes": 8800,
+          "SinceScheduledTicks": 11435290
+        }
+      },
+      "edits-1/Pass": {
+        "Count": 100,
+        "Totals": {
+          "Initial": 0,
+          "WorkerQueueTicks": 313547,
+          "WorkerTicks": 9580707,
+          "WorkerAllocatedBytes": 1300800,
+          "GrammarTicks": 3621,
+          "GrammarAllocatedBytes": 0,
+          "LockWaitTicks": 2749,
+          "TokenizerTicks": 9287904,
+          "TokenizerAllocatedBytes": 192800,
+          "LinePreparationTicks": 49434,
+          "LinePreparationAllocatedBytes": 37600,
+          "OtherWorkerTicks": 236999,
+          "OtherWorkerAllocatedBytes": 1070400,
+          "ReadLines": 100,
+          "SkippedLines": 0,
+          "StoppedLines": 0,
+          "UnknownStopStatusLines": 100,
+          "DocumentLines": 991900,
+          "StaleFrom": 991900,
+          "Complete": 100
+        }
+      },
+      "edits-1/Publication": {
+        "Count": 100,
+        "Totals": {
+          "Final": 100,
+          "QueueTicks": 380665,
+          "CallbackTicks": 15869,
+          "CallbackAllocatedBytes": 8800,
+          "SinceScheduledTicks": 10572498
+        }
+      },
+      "edits-2/Pass": {
+        "Count": 100,
+        "Totals": {
+          "Initial": 0,
+          "WorkerQueueTicks": 301711,
+          "WorkerTicks": 9496336,
+          "WorkerAllocatedBytes": 1300800,
+          "GrammarTicks": 3290,
+          "GrammarAllocatedBytes": 0,
+          "LockWaitTicks": 3256,
+          "TokenizerTicks": 9263335,
+          "TokenizerAllocatedBytes": 192800,
+          "LinePreparationTicks": 49788,
+          "LinePreparationAllocatedBytes": 37600,
+          "OtherWorkerTicks": 176667,
+          "OtherWorkerAllocatedBytes": 1070400,
+          "ReadLines": 100,
+          "SkippedLines": 0,
+          "StoppedLines": 0,
+          "UnknownStopStatusLines": 100,
+          "DocumentLines": 991900,
+          "StaleFrom": 991900,
+          "Complete": 100
+        }
+      },
+      "edits-2/Publication": {
+        "Count": 100,
+        "Totals": {
+          "Final": 100,
+          "QueueTicks": 592754,
+          "CallbackTicks": 19454,
+          "CallbackAllocatedBytes": 8800,
+          "SinceScheduledTicks": 10596462
+        }
+      },
+      "edits-3/Pass": {
+        "Count": 100,
+        "Totals": {
+          "Initial": 0,
+          "WorkerQueueTicks": 263792,
+          "WorkerTicks": 9579247,
+          "WorkerAllocatedBytes": 1300800,
+          "GrammarTicks": 3619,
+          "GrammarAllocatedBytes": 0,
+          "LockWaitTicks": 3163,
+          "TokenizerTicks": 9286243,
+          "TokenizerAllocatedBytes": 192800,
+          "LinePreparationTicks": 53635,
+          "LinePreparationAllocatedBytes": 37600,
+          "OtherWorkerTicks": 232587,
+          "OtherWorkerAllocatedBytes": 1070400,
+          "ReadLines": 100,
+          "SkippedLines": 0,
+          "StoppedLines": 0,
+          "UnknownStopStatusLines": 100,
+          "DocumentLines": 991900,
+          "StaleFrom": 991900,
+          "Complete": 100
+        }
+      },
+      "edits-3/Publication": {
+        "Count": 100,
+        "Totals": {
+          "Final": 100,
+          "QueueTicks": 589539,
+          "CallbackTicks": 17337,
+          "CallbackAllocatedBytes": 8800,
+          "SinceScheduledTicks": 10640536
+        }
+      },
+      "edits-4/Pass": {
+        "Count": 100,
+        "Totals": {
+          "Initial": 0,
+          "WorkerQueueTicks": 268835,
+          "WorkerTicks": 9525544,
+          "WorkerAllocatedBytes": 1300800,
+          "GrammarTicks": 3456,
+          "GrammarAllocatedBytes": 0,
+          "LockWaitTicks": 3255,
+          "TokenizerTicks": 9227705,
+          "TokenizerAllocatedBytes": 192800,
+          "LinePreparationTicks": 51711,
+          "LinePreparationAllocatedBytes": 37600,
+          "OtherWorkerTicks": 239417,
+          "OtherWorkerAllocatedBytes": 1070400,
+          "ReadLines": 100,
+          "SkippedLines": 0,
+          "StoppedLines": 0,
+          "UnknownStopStatusLines": 100,
+          "DocumentLines": 991900,
+          "StaleFrom": 991900,
+          "Complete": 100
+        }
+      },
+      "edits-4/Publication": {
+        "Count": 100,
+        "Totals": {
+          "Final": 100,
+          "QueueTicks": 595913,
+          "CallbackTicks": 17962,
+          "CallbackAllocatedBytes": 8800,
+          "SinceScheduledTicks": 10654917
+        }
+      },
+      "edits-5/Pass": {
+        "Count": 100,
+        "Totals": {
+          "Initial": 0,
+          "WorkerQueueTicks": 259755,
+          "WorkerTicks": 9689957,
+          "WorkerAllocatedBytes": 1300800,
+          "GrammarTicks": 3495,
+          "GrammarAllocatedBytes": 0,
+          "LockWaitTicks": 3037,
+          "TokenizerTicks": 9229336,
+          "TokenizerAllocatedBytes": 192800,
+          "LinePreparationTicks": 51667,
+          "LinePreparationAllocatedBytes": 37600,
+          "OtherWorkerTicks": 402422,
+          "OtherWorkerAllocatedBytes": 1070400,
+          "ReadLines": 100,
+          "SkippedLines": 0,
+          "StoppedLines": 0,
+          "UnknownStopStatusLines": 100,
+          "DocumentLines": 991900,
+          "StaleFrom": 991900,
+          "Complete": 100
+        }
+      },
+      "edits-5/Publication": {
+        "Count": 100,
+        "Totals": {
+          "Final": 100,
+          "QueueTicks": 592999,
+          "CallbackTicks": 18670,
+          "CallbackAllocatedBytes": 8800,
+          "SinceScheduledTicks": 10775123
+        }
+      }
+    }
+  }
+}

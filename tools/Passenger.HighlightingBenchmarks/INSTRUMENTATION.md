@@ -1,6 +1,6 @@
 # Measuring inside Passenger's highlighter
 
-`Passenger-Highlighting` is an opt-in EventSource in the production highlighter. It works with an in-process EventListener and EventPipe from a running IDE. The provider emits only numeric identifiers and measurements, never source text, file paths or token contents. It is disabled unless enabled at **Verbose (5)** level. Explicit, flat event schemas with integer flags keep EventPipe payloads readable by TraceEvent 4.0.0.
+`Passenger-Highlighting` is an opt-in EventSource in the reference branch’s highlighter; it is absent from the PR’s production code. It works with an in-process EventListener and EventPipe from a running IDE. The provider emits only numeric identifiers and measurements, never source text, file paths or token contents. It is disabled unless enabled at **Verbose (5)** level. Explicit, flat event schemas with integer flags keep EventPipe payloads readable by TraceEvent 4.0.0.
 
 ## What is measured
 
@@ -38,11 +38,11 @@ dotnet-trace collect --process-id PID \
 
 Open/edit the same files and use the same theme and viewport for baseline and candidate. Keep project loading and language-server activity comparable. The provider also works when launching the executable through `dotnet-trace collect ... -- COMMAND ARGS`.
 
-A real headless Passenger run opened the 697-line HTML fixture and typed one character. Its trace decoded as an initial pass, a one-line incremental pass and their final publications, with zero lost events; both time/allocation equations were checked. [The decoded summary](ide-trace-summary.json) is committed. This smoke trace was not a controlled baseline/candidate timing comparison.
+In the historical experiment, a real headless Passenger run opened the 697-line HTML fixture and typed one character. Its trace decoded as an initial pass, a one-line incremental pass and their final publications, with zero lost events; both time/allocation equations were checked. [The historical decoded summary](https://github.com/sebastienros/passenger/blob/reference/tint-instrumentation/tools/Passenger.HighlightingBenchmarks/ide-trace-summary.json) is committed. This smoke trace was not a controlled baseline/candidate timing comparison.
 
 ## Reproduce the instrumented comparison
 
-The candidate already contains the instrumentation. For baseline, start from upstream `97758c1ac1d198b02b7ac2282d3c1018f0023282`, copy the benchmark sources and `src/Passenger.Languages/TextMate/HighlightingEventSource.cs` into that checkout, then apply the same boundaries:
+The candidate already contains the instrumentation. For baseline, start from upstream `fa86d9d42dbb53a8067f06f212d80d09540a3fe4`, copy the benchmark sources and `src/Passenger.Languages/TextMate/HighlightingEventSource.cs` into that checkout, then apply the same boundaries:
 
 ```sh
 python3 tools/Passenger.HighlightingBenchmarks/instrument.py /path/to/baseline
@@ -54,17 +54,15 @@ The script supports either engine, applies once, and preserves engine-specific t
 python3 tools/Passenger.HighlightingBenchmarks/run.py \
   --baseline /path/to/baseline/artifacts/bin/Passenger.HighlightingBenchmarks/release/Passenger.HighlightingBenchmarks.dll \
   --candidate /path/to/candidate/artifacts/bin/Passenger.HighlightingBenchmarks/release/Passenger.HighlightingBenchmarks.dll \
-  --instrument --rounds 1 --cases xml.props,css.css,javascript.js,less.less \
+  --instrument --rounds 3 --cases xml.props,css.css,javascript.js,less.less \
   --output diagnostic-results
 python3 tools/Passenger.HighlightingBenchmarks/summarize-diagnostics.py
 ```
 
-These attribution runs use one fresh process per engine/workload, seven measured full passes after warmup and five batches of 100 edits. Each phase aggregates events without retaining per-edit trace objects. The listener checks event errors, successful-pass counts, complete snapshots, paired final publications and exact accounting. Full/incremental colour hashes must agree, and the diagnostic summarizer checks cross-engine colour and input hashes. No EventListener is created unless `--instrument` is supplied.
+These attribution runs use three fresh processes per engine/workload, summarized as medians of process medians,, seven measured full passes after warmup and five batches of 100 edits. Each phase aggregates events without retaining per-edit trace objects. The listener checks event errors, successful-pass counts, complete snapshots, paired final publications and exact accounting. Full/incremental colour hashes must agree, and the diagnostic summarizer checks cross-engine colour and input hashes. No EventListener is created unless `--instrument` is supplied.
 
-The full Release solution build and all 14 colour/responsiveness tests pass after the instrumentation. Instrumentation was also exercised through both the listener and an independently decoded EventPipe trace.
+The current instrumented benchmark builds and every listener run must pass before publication. The independent EventPipe smoke test belongs to the historical experiment and was not repeated for this refresh.
 
 ## Attribution results
 
-See [stage measurements](diagnostic-tables.md) and [machine-readable summary](diagnostic-summary.json). These explain why lower tokenizer cost does not necessarily make a one-line edit proportionally faster: preparation, line tables, dispatch and UI callbacks remain. The original [performance report](RESULTS.md) continues to describe uninstrumented measurements.
-
-In this attribution run, an XML edit spent 3.58 → 1.05 µs inside the tokenizer and allocated 944 → 328 bytes there. Preparation/mapping allocated 368 bytes in both; other worker work still allocated roughly 12 KB. For Less, tokenizer allocations fell 976 → 72 bytes, while other-worker allocations rose 10,112 → 12,008 bytes. This localizes the remaining allocation cost outside the tokenizer, without claiming that one instrumented run establishes its exact cause. Table/run layout and diagnostic overhead can affect that residual.
+See [stage measurements](diagnostic-tables.md) and [machine-readable summary](diagnostic-summary.json). These measure tokenizer costs separately from preparation, line tables, dispatch and publication. [The total measurements](tables.md) come from builds without diagnostic hooks. Both current engines reuse a line buffer within each pass.

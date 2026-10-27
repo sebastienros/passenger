@@ -1,0 +1,552 @@
+[
+  {
+    "case": "xml.props",
+    "lines": 9992,
+    "identical": true,
+    "textmatesharp": {
+      "cold": {
+        "wallMs": 171.3312,
+        "cpuMs": 174.941,
+        "allocatedBytes": 35458880,
+        "workingSetBytes": 79118336,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 167.6466
+      },
+      "warm": {
+        "wallMs": 113.5083,
+        "cpuMs": 130.519,
+        "allocatedBytes": 34448288,
+        "workingSetBytes": 83820544,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 113.4806
+      },
+      "edit": {
+        "wallMs": 0.020263,
+        "cpuMs": 0.06425,
+        "allocatedBytes": 18252,
+        "workerMs": 0.007891,
+        "lines": 1
+      }
+    },
+    "tint": {
+      "cold": {
+        "wallMs": 136.0079,
+        "cpuMs": 139.661,
+        "allocatedBytes": 6067464,
+        "workingSetBytes": 74088448,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 132.1981
+      },
+      "warm": {
+        "wallMs": 76.3273,
+        "cpuMs": 90.323,
+        "allocatedBytes": 5066304,
+        "workingSetBytes": 77234176,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 76.2983
+      },
+      "edit": {
+        "wallMs": 0.024743,
+        "cpuMs": 0.07789,
+        "allocatedBytes": 17636,
+        "workerMs": 0.008807,
+        "lines": 1
+      }
+    }
+  },
+  {
+    "case": "json.json",
+    "lines": 9969,
+    "identical": true,
+    "textmatesharp": {
+      "cold": {
+        "wallMs": 161.1643,
+        "cpuMs": 164.287,
+        "allocatedBytes": 31266888,
+        "workingSetBytes": 75300864,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 157.4849
+      },
+      "warm": {
+        "wallMs": 61.385,
+        "cpuMs": 74.134,
+        "allocatedBytes": 28969648,
+        "workingSetBytes": 86016000,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 61.352
+      },
+      "edit": {
+        "wallMs": 0.023988999999999996,
+        "cpuMs": 0.07413,
+        "allocatedBytes": 19516,
+        "workerMs": 0.011297999999999999,
+        "lines": 1
+      }
+    },
+    "tint": {
+      "cold": {
+        "wallMs": 117.0936,
+        "cpuMs": 120.822,
+        "allocatedBytes": 5885040,
+        "workingSetBytes": 68878336,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 113.5205
+      },
+      "warm": {
+        "wallMs": 64.8714,
+        "cpuMs": 67.459,
+        "allocatedBytes": 5082824,
+        "workingSetBytes": 75710464,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 64.8384
+      },
+      "edit": {
+        "wallMs": 0.021951000000000002,
+        "cpuMs": 0.07562,
+        "allocatedBytes": 15492,
+        "workerMs": 0.007982,
+        "lines": 1
+      }
+    }
+  },
+  {
+    "case": "yaml.yml",
+    "lines": 9889,
+    "identical": true,
+    "textmatesharp": {
+      "cold": {
+        "wallMs": 316.3144,
+        "cpuMs": 323.888,
+        "allocatedBytes": 28338024,
+        "workingSetBytes": 76873728,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 312.6878
+      },
+      "warm": {
+        "wallMs": 201.743,
+        "cpuMs": 211.596,
+        "allocatedBytes": 25554808,
+        "workingSetBytes": 87359488,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 201.7045
+      },
+      "edit": {
+        "wallMs": 0.020146999999999998,
+        "cpuMs": 0.06573999999999999,
+        "allocatedBytes": 17124,
+        "workerMs": 0.007935,
+        "lines": 1
+      }
+    },
+    "tint": {
+      "cold": {
+        "wallMs": 185.2426,
+        "cpuMs": 190.034,
+        "allocatedBytes": 5526472,
+        "workingSetBytes": 71467008,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 181.4629
+      },
+      "warm": {
+        "wallMs": 122.9919,
+        "cpuMs": 134.642,
+        "allocatedBytes": 2899496,
+        "workingSetBytes": 76890112,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 122.9498
+      },
+      "edit": {
+        "wallMs": 0.01279,
+        "cpuMs": 0.04115,
+        "allocatedBytes": 15620,
+        "workerMs": 0.004483,
+        "lines": 1
+      }
+    }
+  },
+  {
+    "case": "markdown.md",
+    "lines": 9960,
+    "identical": true,
+    "textmatesharp": {
+      "cold": {
+        "wallMs": 314.1586,
+        "cpuMs": 333.708,
+        "allocatedBytes": 49066144,
+        "workingSetBytes": 94076928,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 310.6336
+      },
+      "warm": {
+        "wallMs": 151.8177,
+        "cpuMs": 156.026,
+        "allocatedBytes": 17123720,
+        "workingSetBytes": 95780864,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 151.7764
+      },
+      "edit": {
+        "wallMs": 0.035782,
+        "cpuMs": 0.10844,
+        "allocatedBytes": 16100,
+        "workerMs": 0.020687,
+        "lines": 1
+      }
+    },
+    "tint": {
+      "cold": {
+        "wallMs": 302.8985,
+        "cpuMs": 313.211,
+        "allocatedBytes": 34017664,
+        "workingSetBytes": 97206272,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 299.1147
+      },
+      "warm": {
+        "wallMs": 138.006,
+        "cpuMs": 147.651,
+        "allocatedBytes": 2899408,
+        "workingSetBytes": 98189312,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 137.9601
+      },
+      "edit": {
+        "wallMs": 0.019721,
+        "cpuMs": 0.061,
+        "allocatedBytes": 15508,
+        "workerMs": 0.0061070000000000004,
+        "lines": 1
+      }
+    }
+  },
+  {
+    "case": "html.html",
+    "lines": 9759,
+    "identical": true,
+    "textmatesharp": {
+      "cold": {
+        "wallMs": 555.238,
+        "cpuMs": 593.862,
+        "allocatedBytes": 100139304,
+        "workingSetBytes": 87310336,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 551.4552
+      },
+      "warm": {
+        "wallMs": 209.3891,
+        "cpuMs": 214.847,
+        "allocatedBytes": 78750272,
+        "workingSetBytes": 94781440,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 209.3409
+      },
+      "edit": {
+        "wallMs": 0.02416,
+        "cpuMs": 0.07490999999999999,
+        "allocatedBytes": 18732,
+        "workerMs": 0.012092,
+        "lines": 1
+      }
+    },
+    "tint": {
+      "cold": {
+        "wallMs": 360.0815,
+        "cpuMs": 380.424,
+        "allocatedBytes": 24367344,
+        "workingSetBytes": 84721664,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 356.4781
+      },
+      "warm": {
+        "wallMs": 51.1834,
+        "cpuMs": 53.908,
+        "allocatedBytes": 4347840,
+        "workingSetBytes": 96501760,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 51.1517
+      },
+      "edit": {
+        "wallMs": 0.015522000000000001,
+        "cpuMs": 0.05196,
+        "allocatedBytes": 15620,
+        "workerMs": 0.005554,
+        "lines": 1
+      }
+    }
+  },
+  {
+    "case": "css.css",
+    "lines": 9961,
+    "identical": true,
+    "textmatesharp": {
+      "cold": {
+        "wallMs": 4297.5772,
+        "cpuMs": 4503.296,
+        "allocatedBytes": 83360496,
+        "workingSetBytes": 95502336,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 4293.808
+      },
+      "warm": {
+        "wallMs": 4117.251,
+        "cpuMs": 4206.947,
+        "allocatedBytes": 79707032,
+        "workingSetBytes": 100892672,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 4117.2025
+      },
+      "edit": {
+        "wallMs": 0.010281,
+        "cpuMs": 0.03324,
+        "allocatedBytes": 21164,
+        "workerMs": 0.003458,
+        "lines": 1
+      }
+    },
+    "tint": {
+      "cold": {
+        "wallMs": 1261.4017,
+        "cpuMs": 1444.182,
+        "allocatedBytes": 38825960,
+        "workingSetBytes": 92602368,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 1257.6962
+      },
+      "warm": {
+        "wallMs": 307.4963,
+        "cpuMs": 315.109,
+        "allocatedBytes": 4657616,
+        "workingSetBytes": 91537408,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 307.4497
+      },
+      "edit": {
+        "wallMs": 0.010105,
+        "cpuMs": 0.03273,
+        "allocatedBytes": 15572,
+        "workerMs": 0.001989,
+        "lines": 1
+      }
+    }
+  },
+  {
+    "case": "javascript.js",
+    "lines": 9919,
+    "identical": true,
+    "textmatesharp": {
+      "cold": {
+        "wallMs": 1920.622,
+        "cpuMs": 2031.682,
+        "allocatedBytes": 160590280,
+        "workingSetBytes": 112951296,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 1916.8185
+      },
+      "warm": {
+        "wallMs": 1678.4472,
+        "cpuMs": 1714.758,
+        "allocatedBytes": 153327096,
+        "workingSetBytes": 120438784,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 1678.3948
+      },
+      "edit": {
+        "wallMs": 0.110474,
+        "cpuMs": 0.20162,
+        "allocatedBytes": 17730.24,
+        "workerMs": 0.095468,
+        "lines": 1
+      }
+    },
+    "tint": {
+      "cold": {
+        "wallMs": 1137.16,
+        "cpuMs": 1312.381,
+        "allocatedBytes": 40945048,
+        "workingSetBytes": 92110848,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 1133.5068
+      },
+      "warm": {
+        "wallMs": 235.387,
+        "cpuMs": 240.774,
+        "allocatedBytes": 4180488,
+        "workingSetBytes": 91291648,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 235.3442
+      },
+      "edit": {
+        "wallMs": 0.034661,
+        "cpuMs": 0.10979,
+        "allocatedBytes": 15556,
+        "workerMs": 0.02338,
+        "lines": 1
+      }
+    }
+  },
+  {
+    "case": "shell.sh",
+    "lines": 9673,
+    "identical": true,
+    "textmatesharp": {
+      "cold": {
+        "wallMs": 685.9454,
+        "cpuMs": 730.394,
+        "allocatedBytes": 78169976,
+        "workingSetBytes": 78839808,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 682.1226
+      },
+      "warm": {
+        "wallMs": 451.1562,
+        "cpuMs": 461.334,
+        "allocatedBytes": 71696064,
+        "workingSetBytes": 88145920,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 451.1157
+      },
+      "edit": {
+        "wallMs": 0.020223,
+        "cpuMs": 0.061079999999999995,
+        "allocatedBytes": 17628,
+        "workerMs": 0.007276,
+        "lines": 1
+      }
+    },
+    "tint": {
+      "cold": {
+        "wallMs": 400.5955,
+        "cpuMs": 411.618,
+        "allocatedBytes": 11035488,
+        "workingSetBytes": 73007104,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 396.9254
+      },
+      "warm": {
+        "wallMs": 63.9694,
+        "cpuMs": 68.615,
+        "allocatedBytes": 5002840,
+        "workingSetBytes": 91848704,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 63.9399
+      },
+      "edit": {
+        "wallMs": 0.013333999999999999,
+        "cpuMs": 0.0463,
+        "allocatedBytes": 15140,
+        "workerMs": 0.0033489999999999995,
+        "lines": 1
+      }
+    }
+  },
+  {
+    "case": "scss.scss",
+    "lines": 9997,
+    "identical": true,
+    "textmatesharp": {
+      "cold": {
+        "wallMs": 1407.5007,
+        "cpuMs": 1556.555,
+        "allocatedBytes": 39841400,
+        "workingSetBytes": 91144192,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 1403.9015
+      },
+      "warm": {
+        "wallMs": 1178.7372,
+        "cpuMs": 1203.176,
+        "allocatedBytes": 34452408,
+        "workingSetBytes": 102547456,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 1178.6901
+      },
+      "edit": {
+        "wallMs": 0.023967000000000002,
+        "cpuMs": 0.07393,
+        "allocatedBytes": 16084,
+        "workerMs": 0.012306999999999998,
+        "lines": 1
+      }
+    },
+    "tint": {
+      "cold": {
+        "wallMs": 675.5138,
+        "cpuMs": 700.346,
+        "allocatedBytes": 31747296,
+        "workingSetBytes": 90423296,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 671.8302
+      },
+      "warm": {
+        "wallMs": 77.1363,
+        "cpuMs": 80.776,
+        "allocatedBytes": 2199552,
+        "workingSetBytes": 88244224,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 77.0959
+      },
+      "edit": {
+        "wallMs": 0.017747,
+        "cpuMs": 0.05593,
+        "allocatedBytes": 16836,
+        "workerMs": 0.005887,
+        "lines": 1
+      }
+    }
+  },
+  {
+    "case": "less.less",
+    "lines": 9997,
+    "identical": true,
+    "textmatesharp": {
+      "cold": {
+        "wallMs": 407.3967,
+        "cpuMs": 432.331,
+        "allocatedBytes": 52946496,
+        "workingSetBytes": 79069184,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 403.8081
+      },
+      "warm": {
+        "wallMs": 169.4025,
+        "cpuMs": 175.449,
+        "allocatedBytes": 45691296,
+        "workingSetBytes": 87261184,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 169.3507
+      },
+      "edit": {
+        "wallMs": 0.013836,
+        "cpuMs": 0.046020000000000005,
+        "allocatedBytes": 17620,
+        "workerMs": 0.005294,
+        "lines": 1
+      }
+    },
+    "tint": {
+      "cold": {
+        "wallMs": 260.5693,
+        "cpuMs": 273.043,
+        "allocatedBytes": 19304016,
+        "workingSetBytes": 76890112,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 256.9132
+      },
+      "warm": {
+        "wallMs": 49.2678,
+        "cpuMs": 98.833,
+        "allocatedBytes": 2514456,
+        "workingSetBytes": 88260608,
+        "peakWorkingSetBytes": 0,
+        "workerMs": 49.2241
+      },
+      "edit": {
+        "wallMs": 0.016409,
+        "cpuMs": 0.05441,
+        "allocatedBytes": 16716,
+        "workerMs": 0.005952,
+        "lines": 1
+      }
+    }
+  }
+]

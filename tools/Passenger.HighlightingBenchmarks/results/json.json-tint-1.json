@@ -1,0 +1,221 @@
+{
+  "runtime": ".NET 11.0.0-rc.3.26522.148",
+  "os": "macOS 15.8.1",
+  "architecture": "Arm64",
+  "source": "/private/tmp/passenger-fresh-tint/tools/Passenger.HighlightingBenchmarks/fixtures/json.json",
+  "inputSha256": "1A2D78EEAF76874DD95934BBBA6B2F283438D30E4197B778CDD5903E7EB1890A",
+  "characters": 439936,
+  "lines": 9969,
+  "colourHash": "26AC2F478D091CC29D8CA5C812A87E39D00FE03510625AE7EF6027DD139C2F93",
+  "samples": [
+    {
+      "phase": "cold",
+      "wallMs": 117.0936,
+      "cpuMs": 120.822,
+      "allocatedBytes": 5885040,
+      "retainedBytes": 1274624,
+      "workingSetBytes": 68714496,
+      "peakWorkingSetBytes": 0,
+      "gc": [
+        0,
+        0,
+        0
+      ],
+      "lines": 9969,
+      "workerMs": 113.5205
+    },
+    {
+      "phase": "warmup",
+      "wallMs": 64.1891,
+      "cpuMs": 65.596,
+      "allocatedBytes": 5083496,
+      "retainedBytes": 784,
+      "workingSetBytes": 71286784,
+      "peakWorkingSetBytes": 0,
+      "gc": [
+        0,
+        0,
+        0
+      ],
+      "lines": 9969,
+      "workerMs": 64.1488
+    },
+    {
+      "phase": "warmup",
+      "wallMs": 63.2573,
+      "cpuMs": 64.72,
+      "allocatedBytes": 5082568,
+      "retainedBytes": 104,
+      "workingSetBytes": 73891840,
+      "peakWorkingSetBytes": 0,
+      "gc": [
+        0,
+        0,
+        0
+      ],
+      "lines": 9969,
+      "workerMs": 63.2228
+    },
+    {
+      "phase": "warm",
+      "wallMs": 61.4695,
+      "cpuMs": 62.759,
+      "allocatedBytes": 5084520,
+      "retainedBytes": 184,
+      "workingSetBytes": 74825728,
+      "peakWorkingSetBytes": 0,
+      "gc": [
+        0,
+        0,
+        0
+      ],
+      "lines": 9969,
+      "workerMs": 61.4387
+    },
+    {
+      "phase": "warm",
+      "wallMs": 61.2594,
+      "cpuMs": 62.601,
+      "allocatedBytes": 5084488,
+      "retainedBytes": 104,
+      "workingSetBytes": 73891840,
+      "peakWorkingSetBytes": 0,
+      "gc": [
+        0,
+        0,
+        0
+      ],
+      "lines": 9969,
+      "workerMs": 61.2385
+    },
+    {
+      "phase": "warm",
+      "wallMs": 84.3467,
+      "cpuMs": 96.905,
+      "allocatedBytes": 5085456,
+      "retainedBytes": 104,
+      "workingSetBytes": 75825152,
+      "peakWorkingSetBytes": 0,
+      "gc": [
+        0,
+        0,
+        0
+      ],
+      "lines": 9969,
+      "workerMs": 84.3072
+    },
+    {
+      "phase": "warm",
+      "wallMs": 82.9891,
+      "cpuMs": 85.002,
+      "allocatedBytes": 5084832,
+      "retainedBytes": 104,
+      "workingSetBytes": 75825152,
+      "peakWorkingSetBytes": 0,
+      "gc": [
+        0,
+        0,
+        0
+      ],
+      "lines": 9969,
+      "workerMs": 82.9441
+    },
+    {
+      "phase": "warm",
+      "wallMs": 82.0027,
+      "cpuMs": 89.283,
+      "allocatedBytes": 4608528,
+      "retainedBytes": 56,
+      "workingSetBytes": 75169792,
+      "peakWorkingSetBytes": 0,
+      "gc": [
+        0,
+        0,
+        0
+      ],
+      "lines": 9969,
+      "workerMs": 81.9664
+    },
+    {
+      "phase": "warm",
+      "wallMs": 78.2123,
+      "cpuMs": 97.49,
+      "allocatedBytes": 3794816,
+      "retainedBytes": 6248,
+      "workingSetBytes": 78528512,
+      "peakWorkingSetBytes": 0,
+      "gc": [
+        0,
+        0,
+        0
+      ],
+      "lines": 9969,
+      "workerMs": 78.1701
+    },
+    {
+      "phase": "warm",
+      "wallMs": 35.7185,
+      "cpuMs": 61.146,
+      "allocatedBytes": 3046632,
+      "retainedBytes": 104,
+      "workingSetBytes": 87736320,
+      "peakWorkingSetBytes": 0,
+      "gc": [
+        0,
+        0,
+        0
+      ],
+      "lines": 9969,
+      "workerMs": 35.6741
+    },
+    {
+      "phase": "edit-warmup",
+      "wallMs": 0.030746000000000002,
+      "cpuMs": 0.07333,
+      "allocatedBytes": 15492.56,
+      "lines": 1,
+      "workerMs": 0.007795
+    },
+    {
+      "phase": "edit",
+      "wallMs": 0.017294,
+      "cpuMs": 0.05434,
+      "allocatedBytes": 15492,
+      "lines": 1,
+      "workerMs": 0.007175
+    },
+    {
+      "phase": "edit",
+      "wallMs": 0.020007999999999998,
+      "cpuMs": 0.06504,
+      "allocatedBytes": 15492,
+      "lines": 1,
+      "workerMs": 0.008289
+    },
+    {
+      "phase": "edit",
+      "wallMs": 0.021897000000000003,
+      "cpuMs": 0.06447,
+      "allocatedBytes": 15492,
+      "lines": 1,
+      "workerMs": 0.009052
+    },
+    {
+      "phase": "edit",
+      "wallMs": 0.021596,
+      "cpuMs": 0.06526,
+      "allocatedBytes": 15492,
+      "lines": 1,
+      "workerMs": 0.007982
+    },
+    {
+      "phase": "edit",
+      "wallMs": 0.020082,
+      "cpuMs": 0.06362,
+      "allocatedBytes": 15492,
+      "lines": 1,
+      "workerMs": 0.007485
+    }
+  ],
+  "diagnostics": null
+}
