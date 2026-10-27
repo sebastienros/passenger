@@ -2,8 +2,7 @@ using System.Diagnostics;
 using Passenger.Core;
 using Passenger.Editor;
 using Passenger.Text;
-using TextMateSharp.Grammars;
-using TextMateSharp.Internal.Grammars;
+using Tint;
 
 namespace Passenger.Languages.TextMate;
 
@@ -172,7 +171,7 @@ public sealed partial class TextMateHighlighter : IHighlighter, IBraceMatcher, I
     private LineTable Pass(LineTable? old, TextSnapshot text, int first, int tail, int passVersion)
     {
         long began = Stopwatch.GetTimestamp();
-        IGrammar rules = grammar.Rules;
+        Tokenizer rules = grammar.Rules;
         int count = text.LineCount;
         int oldCount = old?.Count ?? 0;
         int delta = count - oldCount;
@@ -183,7 +182,7 @@ public sealed partial class TextMateHighlighter : IHighlighter, IBraceMatcher, I
         {
             built.AddRange(old, 0, first);
         }
-        IStateStack? state = first == 0 ? null : old![first - 1].End;
+        StateStack? state = first == 0 ? null : old![first - 1].End;
         int staleFrom = count;
         int line = first;
         long shown = began;
@@ -265,25 +264,24 @@ public sealed partial class TextMateHighlighter : IHighlighter, IBraceMatcher, I
     }
 
     /// <summary>One line's colours and the state it ends in.</summary>
-    private TokenLine Read(IGrammar rules, TextSnapshot text, int line, IStateStack? state, List<SyntaxSpan> scratch)
+    private TokenLine Read(Tokenizer rules, TextSnapshot text, int line, StateStack? state, List<SyntaxSpan> scratch)
     {
         LineSpan span = text.GetLine(line);
         if (span.Length > LongestLine)
         {
             return new TokenLine([], state);
         }
-        // The grammar reads a line with its break, which it would otherwise copy the line to add.
-        char[] chars = new char[span.Length + 1];
+        // Tint accepts the line without its break and appends it in a reusable buffer.
+        char[] chars = new char[span.Length];
         text.CopyTo(span.Start, chars.AsSpan(0, span.Length));
-        chars[span.Length] = '\n';
-        ITokenizeLineResult2 result = rules.TokenizeLine2(new LineText(chars.AsMemory()), state, LineLimit);
-        int[] tokens = result.Tokens;
+        rules.TimeBudget = LineLimit;
+        ReadOnlySpan<EncodedToken> tokens = rules.TokenizeLineEncoded(chars.AsSpan(0, span.Length), state ?? StateStack.Initial, out StateStack next);
         scratch.Clear();
-        for (int i = 0; i < tokens.Length; i += 2)
+        for (int i = 0; i < tokens.Length; i++)
         {
-            int start = tokens[i];
-            int end = Math.Min(i + 2 < tokens.Length ? tokens[i + 2] : span.Length, span.Length);
-            TokenKind kind = grammar.KindOf(EncodedTokenAttributes.GetForeground(tokens[i + 1]));
+            int start = tokens[i].Start;
+            int end = Math.Min(i + 1 < tokens.Length ? tokens[i + 1].Start : span.Length, span.Length);
+            TokenKind kind = grammar.KindOf(EncodedTokenAttributes.GetForeground(tokens[i].Metadata));
             if (end <= start || kind == TokenKind.Text)
             {
                 continue;
@@ -297,7 +295,7 @@ public sealed partial class TextMateHighlighter : IHighlighter, IBraceMatcher, I
                 scratch.Add(new SyntaxSpan(start, end - start, kind));
             }
         }
-        return new TokenLine(scratch.Count == 0 ? [] : [.. scratch], result.RuleStack);
+        return new TokenLine(scratch.Count == 0 ? [] : [.. scratch], next);
     }
 
     private void OnUi(Action action)
