@@ -6,7 +6,7 @@ Passenger's non-C# highlighter uses Tint 0.1.2 / GregsEx 0.5.3 in place of TextM
 
 The [reference branch](https://github.com/sebastienros/passenger/tree/reference/tint-instrumentation) preserves the instrumentation, benchmark harness, fixtures, raw measurements and reproduction instructions. The [fixed experiment commit](https://github.com/sebastienros/passenger/tree/0f1ae0c6/tools/Passenger.HighlightingBenchmarks) remains available independently of that branch. None of its diagnostic hooks is included in the production replacement.
 
-The measurements below were collected against upstream `97758c1ac1d198b02b7ac2282d3c1018f0023282`, before the replacement was rebased onto newer main. They are evidence from that experiment, **not a fresh measurement of the rebased branch**.
+The measurements below were collected against upstream `97758c1ac1d198b02b7ac2282d3c1018f0023282`, before the replacement was rebased onto newer main. They are evidence from that experiment, **not a fresh measurement of the rebased branch**. The subsequent merge of upstream `fa86d9d4` preserves its per-pass line-buffer reuse with Tint; the tables predate that allocation improvement.
 
 Apple M4 Pro, 48 GiB RAM, macOS 15.8 arm64; .NET 11 RC3, Release. Ten workloads repeat existing Passenger sources to about 10,000 lines. Total measurements use three fresh processes per engine, two warmup passes after first use and seven measured full passes. Edit measurements use five measured batches of 100 one-character replacements. Results are medians of process medians. Tokenizer measurements use a separate instrumented run on four workloads.
 
@@ -44,3 +44,5 @@ Apple M4 Pro, 48 GiB RAM, macOS 15.8 arm64; .NET 11 RC3, Release. Ten workloads 
 ## Validation of the cleaned replacement
 
 On upstream `31db588d` plus the replacement: locked restore, the full Release solution build (zero warnings/errors), all 16 colour/responsiveness tests, and the package-notices check passed. The added tests cover standalone Razor's HTML/C# grammar dependencies and independent JSON document states sharing one tokenizer. The complete cross-platform suite and language-server-backed Razor tests were not run for this cleaned branch.
+
+After merging upstream `fa86d9d4` and retaining its line-buffer reuse, locked restore, the full Release solution build (zero warnings/errors), and all 16 colour/responsiveness tests passed again.

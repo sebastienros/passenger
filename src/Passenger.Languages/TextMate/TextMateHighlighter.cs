@@ -187,6 +187,7 @@ public sealed partial class TextMateHighlighter : IHighlighter, IBraceMatcher, I
         int line = first;
         long shown = began;
         List<SyntaxSpan> scratch = [];
+        char[] buffer = [];
         while (line < count)
         {
             int until = Math.Min(count, line + LinesAtATime);
@@ -196,7 +197,7 @@ public sealed partial class TextMateHighlighter : IHighlighter, IBraceMatcher, I
             {
                 for (; line < until; line++)
                 {
-                    TokenLine read = Read(rules, text, line, state, scratch);
+                    TokenLine read = Read(rules, text, line, state, scratch, ref buffer);
                     built.Add(read);
                     state = read.End;
                     int next = line + 1;
@@ -263,19 +264,22 @@ public sealed partial class TextMateHighlighter : IHighlighter, IBraceMatcher, I
         Changed?.Invoke(this, EventArgs.Empty);
     }
 
-    /// <summary>One line's colours and the state it ends in.</summary>
-    private TokenLine Read(Tokenizer rules, TextSnapshot text, int line, StateStack? state, List<SyntaxSpan> scratch)
+    /// <summary>One line's colours and the state it ends in, reusing the pass's buffer between lines.</summary>
+    private TokenLine Read(Tokenizer rules, TextSnapshot text, int line, StateStack? state, List<SyntaxSpan> scratch, ref char[] buffer)
     {
         LineSpan span = text.GetLine(line);
         if (span.Length > LongestLine)
         {
             return new TokenLine([], state);
         }
+        if (buffer.Length < span.Length)
+        {
+            buffer = new char[Math.Max(span.Length, Math.Min(LongestLine, buffer.Length * 2))];
+        }
         // Tint accepts the line without its break and appends it in a reusable buffer.
-        char[] chars = new char[span.Length];
-        text.CopyTo(span.Start, chars.AsSpan(0, span.Length));
+        text.CopyTo(span.Start, buffer.AsSpan(0, span.Length));
         rules.TimeBudget = LineLimit;
-        ReadOnlySpan<EncodedToken> tokens = rules.TokenizeLineEncoded(chars.AsSpan(0, span.Length), state ?? StateStack.Initial, out StateStack next);
+        ReadOnlySpan<EncodedToken> tokens = rules.TokenizeLineEncoded(buffer.AsSpan(0, span.Length), state ?? StateStack.Initial, out StateStack next);
         scratch.Clear();
         for (int i = 0; i < tokens.Length; i++)
         {

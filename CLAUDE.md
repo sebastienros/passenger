@@ -123,8 +123,9 @@ RID reaches every referenced project's restore). Every recipe and CI set `AVALON
   ACL and streams and macOS metadata kept, a read-only file refused, Local History given the old bytes). Any other whole
   file: `AtomicFile.Write`. Never `File.WriteAll*`. Passenger saves an open project, solution, nuget.config or
   Directory.Packages.props before writing it and loads what it wrote after (`SaveBeforeWriting`, `FollowWritten`). A
-  change of several files, or one that moves a file, is one command of global undo (`EditorArea.Commands.Record`).
-  Server edits pass `LineEndings.Fit` then `Indentation.Fit`.
+  change of several files, or one that moves a file, is one command of global undo (`EditorArea.Commands.Record`), and
+  the window follows only what a change of files made, moved or deleted (`Following`, `CameOrWent`), never a whole
+  re-read of the folder. Server edits pass `LineEndings.Fit` then `Indentation.Fit`.
 - **State is a `StateDocument`** in the one `StateStore` (versioned `Upgrades`, `Clamped`, written debounced and merged,
   a bad file set aside as `.bad`), read off the UI thread; never a file of its own. Per-folder state lives under
   `workspaces/<name>-<hash>/` and is made in `ProjectSession`. A new setting: an `AppSettings` property, its row and
@@ -150,7 +151,8 @@ Projects in `src/`; `find_symbol` finds the rest:
 - `Passenger.Core`: what everything shares, no UI: `ChildProcesses` (`StartAsync` forks off the UI thread: a fork costs a
   large process tens of ms), `Dotnet`/`Programs`/`ShellEnvironment` (tools found as the login shell would), `PathNames`,
   `AtomicFile`, `SocketFolders` (every Unix socket), `InFlight`, `BackgroundWork`, `Product` (the one place the version
-  is read), `PassengerLog` (below the App, never `IdeLog`), `UnawaitedWork`.
+  is read), `PassengerLog` (below the App, never `IdeLog`), `UnawaitedWork`, `Utf8Lines` and `PooledBytes` (a peer's
+  lines read and messages written as pooled bytes).
 - `Passenger.Text`: the rope (every version a thread-safe snapshot), `TextDocument`, every editing command as a pure
   function to an `EditPlan`, `FuzzyMatch` (allocates nothing), `FileText`, and anchors (`AnchorAt`/`RangeAt`/`MarkAt`,
   `AnchoredList`; moved before `Changed`, each handler isolated): hold a place in the text with one, never your own
@@ -248,7 +250,8 @@ site-shots` retakes its images.
   builds since start Visual Studio Telemetry's session even with telemetry off (dotnet/roslyn#86122; #234). After
   lowering it, delete `artifacts/bin/*/debug/roslyn*`, or the copy leaves a mixed server that won't start.
 - **Roslyn's server makes a C# file opened before its project loads a Miscellaneous File** and restores a project of its
-  own for it, so `CSharpService` opens a loading project's files only once the server says that project loaded.
+  own for it, so `CSharpService` opens a loading project's files only once the server says that project loaded. A reload
+  sent while it loads is one more load to wait for (`RoslynSession`): the server's word that a load ended names none.
 - **Roslyn's server writes its MEF caches beside its DLLs** (`roslyn/cache/`, no option for elsewhere), so where that
   folder is in a macOS bundle (a file added breaks the seal: "damaged", #450) or read-only, it runs from a copy in the
   state's `cache/roslyn/` (`RoslynServerFolder`); nothing a Passenger runs may write inside the app.
