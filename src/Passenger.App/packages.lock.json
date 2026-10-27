@@ -238,6 +238,11 @@
           "Azure.Core": "1.53.0"
         }
       },
+      "GregsEx": {
+        "type": "Transitive",
+        "resolved": "0.5.3",
+        "contentHash": "Bqql6pbTEX5/xgMlxaTtKlXMWc8Se5i/WaugU+AXQ/Jo0wUo1jbZeMPyJXOobdLtQCA0BCZzo1gNSF1HtexSyw=="
+      },
       "Grpc.Core.Api": {
         "type": "Transitive",
         "resolved": "2.84.0",
@@ -413,11 +418,6 @@
         "resolved": "7.9.0",
         "contentHash": "w2adPmgUafmW9ON1MzDjuHmViN0vtiPV48Dz3OE6px8BiGSqrnWHOjwFEPOEPAZx20J1c7bxp90Hxo9l4xGWtw=="
       },
-      "Onigwrap": {
-        "type": "Transitive",
-        "resolved": "1.0.11",
-        "contentHash": "5/WAxSYWfiiPzp1X13qqdqjFmYLKDD/U7Vh3WCkKxWG9BjqdrXnQE5fCKCFJX+xWvuYLTxwZIVWBwBWObViE8g=="
-      },
       "PolyType": {
         "type": "Transitive",
         "resolved": "1.4.1",
@@ -502,7 +502,7 @@
           "Passenger.Editor": "[0.2.0, )",
           "Passenger.Lsp": "[0.2.0, )",
           "Passenger.Text": "[0.2.0, )",
-          "TextMateSharp": "[2.0.4, )"
+          "Tint": "[0.1.2, )"
         }
       },
       "passenger.lsp": {
@@ -612,13 +612,13 @@
           "Microsoft.Windows.Console.ConPTY": "1.24.260710001"
         }
       },
-      "TextMateSharp": {
+      "Tint": {
         "type": "CentralTransitive",
-        "requested": "[2.0.4, )",
-        "resolved": "2.0.4",
-        "contentHash": "5Pvn+A4zb1IF+ACAVhgw1aGf9kTyx6j7v5hdup7nCS89Nzby8KQAlCfQ54VC/GAsEoQwh4zKa5MKlAaql8nkPg==",
+        "requested": "[0.1.2, )",
+        "resolved": "0.1.2",
+        "contentHash": "BZCD9XlUE+lN3Qvq4ta9UrgY/FN4Q8D2rK0aBqnOIJO2ndHoIllNBEREsp93znXsrCP36zl+Z2/VnfTFAruDBA==",
         "dependencies": {
-          "Onigwrap": "1.0.11"
+          "GregsEx": "0.5.3"
         }
       }
     },
@@ -655,11 +655,6 @@
         "type": "Transitive",
         "resolved": "1.24.260710001",
         "contentHash": "JR1xAkZbNnAALBjzFpqSwEx7YZfD1LI228jF9j9cgKknBPCiFy9mpphlgH+TpTN8vajTUpcgg9Miy5Y8eUAH9g=="
-      },
-      "Onigwrap": {
-        "type": "Transitive",
-        "resolved": "1.0.11",
-        "contentHash": "5/WAxSYWfiiPzp1X13qqdqjFmYLKDD/U7Vh3WCkKxWG9BjqdrXnQE5fCKCFJX+xWvuYLTxwZIVWBwBWObViE8g=="
       },
       "SkiaSharp.NativeAssets.Linux": {
         "type": "Transitive",
@@ -720,11 +715,6 @@
         "resolved": "1.24.260710001",
         "contentHash": "JR1xAkZbNnAALBjzFpqSwEx7YZfD1LI228jF9j9cgKknBPCiFy9mpphlgH+TpTN8vajTUpcgg9Miy5Y8eUAH9g=="
       },
-      "Onigwrap": {
-        "type": "Transitive",
-        "resolved": "1.0.11",
-        "contentHash": "5/WAxSYWfiiPzp1X13qqdqjFmYLKDD/U7Vh3WCkKxWG9BjqdrXnQE5fCKCFJX+xWvuYLTxwZIVWBwBWObViE8g=="
-      },
       "SkiaSharp.NativeAssets.Linux": {
         "type": "Transitive",
         "resolved": "3.119.4",
@@ -783,11 +773,6 @@
         "type": "Transitive",
         "resolved": "1.24.260710001",
         "contentHash": "JR1xAkZbNnAALBjzFpqSwEx7YZfD1LI228jF9j9cgKknBPCiFy9mpphlgH+TpTN8vajTUpcgg9Miy5Y8eUAH9g=="
-      },
-      "Onigwrap": {
-        "type": "Transitive",
-        "resolved": "1.0.11",
-        "contentHash": "5/WAxSYWfiiPzp1X13qqdqjFmYLKDD/U7Vh3WCkKxWG9BjqdrXnQE5fCKCFJX+xWvuYLTxwZIVWBwBWObViE8g=="
       },
       "SkiaSharp.NativeAssets.Linux": {
         "type": "Transitive",
@@ -848,11 +833,6 @@
         "resolved": "1.24.260710001",
         "contentHash": "JR1xAkZbNnAALBjzFpqSwEx7YZfD1LI228jF9j9cgKknBPCiFy9mpphlgH+TpTN8vajTUpcgg9Miy5Y8eUAH9g=="
       },
-      "Onigwrap": {
-        "type": "Transitive",
-        "resolved": "1.0.11",
-        "contentHash": "5/WAxSYWfiiPzp1X13qqdqjFmYLKDD/U7Vh3WCkKxWG9BjqdrXnQE5fCKCFJX+xWvuYLTxwZIVWBwBWObViE8g=="
-      },
       "SkiaSharp.NativeAssets.Linux": {
         "type": "Transitive",
         "resolved": "3.119.4",
@@ -911,11 +891,6 @@
         "type": "Transitive",
         "resolved": "1.24.260710001",
         "contentHash": "JR1xAkZbNnAALBjzFpqSwEx7YZfD1LI228jF9j9cgKknBPCiFy9mpphlgH+TpTN8vajTUpcgg9Miy5Y8eUAH9g=="
-      },
-      "Onigwrap": {
-        "type": "Transitive",
-        "resolved": "1.0.11",
-        "contentHash": "5/WAxSYWfiiPzp1X13qqdqjFmYLKDD/U7Vh3WCkKxWG9BjqdrXnQE5fCKCFJX+xWvuYLTxwZIVWBwBWObViE8g=="
       },
       "SkiaSharp.NativeAssets.Linux": {
         "type": "Transitive",
@@ -976,11 +951,6 @@
         "resolved": "1.24.260710001",
         "contentHash": "JR1xAkZbNnAALBjzFpqSwEx7YZfD1LI228jF9j9cgKknBPCiFy9mpphlgH+TpTN8vajTUpcgg9Miy5Y8eUAH9g=="
       },
-      "Onigwrap": {
-        "type": "Transitive",
-        "resolved": "1.0.11",
-        "contentHash": "5/WAxSYWfiiPzp1X13qqdqjFmYLKDD/U7Vh3WCkKxWG9BjqdrXnQE5fCKCFJX+xWvuYLTxwZIVWBwBWObViE8g=="
-      },
       "SkiaSharp.NativeAssets.Linux": {
         "type": "Transitive",
         "resolved": "3.119.4",
@@ -1040,11 +1010,6 @@
         "resolved": "1.24.260710001",
         "contentHash": "JR1xAkZbNnAALBjzFpqSwEx7YZfD1LI228jF9j9cgKknBPCiFy9mpphlgH+TpTN8vajTUpcgg9Miy5Y8eUAH9g=="
       },
-      "Onigwrap": {
-        "type": "Transitive",
-        "resolved": "1.0.11",
-        "contentHash": "5/WAxSYWfiiPzp1X13qqdqjFmYLKDD/U7Vh3WCkKxWG9BjqdrXnQE5fCKCFJX+xWvuYLTxwZIVWBwBWObViE8g=="
-      },
       "SkiaSharp.NativeAssets.Linux": {
         "type": "Transitive",
         "resolved": "3.119.4",
@@ -1103,11 +1068,6 @@
         "type": "Transitive",
         "resolved": "1.24.260710001",
         "contentHash": "JR1xAkZbNnAALBjzFpqSwEx7YZfD1LI228jF9j9cgKknBPCiFy9mpphlgH+TpTN8vajTUpcgg9Miy5Y8eUAH9g=="
-      },
-      "Onigwrap": {
-        "type": "Transitive",
-        "resolved": "1.0.11",
-        "contentHash": "5/WAxSYWfiiPzp1X13qqdqjFmYLKDD/U7Vh3WCkKxWG9BjqdrXnQE5fCKCFJX+xWvuYLTxwZIVWBwBWObViE8g=="
       },
       "SkiaSharp.NativeAssets.Linux": {
         "type": "Transitive",
