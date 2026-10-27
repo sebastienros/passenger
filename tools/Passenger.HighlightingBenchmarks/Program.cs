@@ -9,13 +9,14 @@ using Passenger.Languages;
 using Passenger.Languages.TextMate;
 using Passenger.Text;
 
-if (args.Length != 3)
+if (args.Length is not (3 or 4) || (args.Length == 4 && args[3] != "--instrument"))
 {
-    Console.Error.WriteLine("Usage: Passenger.HighlightingBenchmarks <filename> <repeat-count> <output.json>");
+    Console.Error.WriteLine("Usage: Passenger.HighlightingBenchmarks <filename> <repeat-count> <output.json> [--instrument]");
     return 1;
 }
 string input = File.ReadAllText(args[0]).Replace("\r\n", "\n", StringComparison.Ordinal);
 string text = string.Concat(Enumerable.Repeat(input + "\n", int.Parse(args[1], System.Globalization.CultureInfo.InvariantCulture)));
+using HighlightingListener? diagnostics = args.Length == 4 ? new HighlightingListener() : null;
 Language language = Language.ForPath(args[0]);
 Pump context = new();
 SynchronizationContext.SetSynchronizationContext(context);
@@ -27,6 +28,10 @@ string? hash = null;
 
 for (int iteration = 0; iteration < 10; iteration++)
 {
+    if (diagnostics is not null)
+    {
+        diagnostics.Phase = $"pass-{iteration}";
+    }
     highlighter?.Dispose();
     highlighter = null;
     GC.Collect();
@@ -70,6 +75,10 @@ if (position < 0)
 char original = text[position];
 for (int batch = 0; batch < 6; batch++)
 {
+    if (diagnostics is not null)
+    {
+        diagnostics.Phase = $"edits-{batch}";
+    }
     long lines = highlighter!.Worked.Lines;
     TimeSpan worked = highlighter.Worked.Time;
     long allocated = GC.GetTotalAllocatedBytes(true);
@@ -98,7 +107,7 @@ File.WriteAllText(args[2], JsonSerializer.Serialize(new {
     os = System.Runtime.InteropServices.RuntimeInformation.OSDescription,
     architecture = System.Runtime.InteropServices.RuntimeInformation.ProcessArchitecture.ToString(),
     source = args[0], inputSha256 = Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(text))),
-    characters = text.Length, lines = document.Snapshot.LineCount, colourHash = hash, samples
+    characters = text.Length, lines = document.Snapshot.LineCount, colourHash = hash, samples, diagnostics = diagnostics?.Snapshot()
 }, new JsonSerializerOptions { WriteIndented = true }));
 highlighter!.Dispose();
 return 0;

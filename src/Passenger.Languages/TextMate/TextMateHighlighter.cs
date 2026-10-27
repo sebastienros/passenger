@@ -41,6 +41,8 @@ public sealed partial class TextMateHighlighter : IHighlighter, IBraceMatcher, I
     private long linesRead;
     private int passes;
     private long workTicks;
+    private static long nextDiagnosticId;
+    private long diagnosticId;
 
     private TextMateHighlighter(TextDocument document, Grammar grammar)
     {
@@ -131,6 +133,15 @@ public sealed partial class TextMateHighlighter : IHighlighter, IBraceMatcher, I
         LineTable? old = table;
         TextSnapshot text = document.Snapshot;
         int passVersion = version;
+        HighlightingPass? telemetry = null;
+        if (HighlightingEventSource.Log.IsEnabled(System.Diagnostics.Tracing.EventLevel.Verbose, System.Diagnostics.Tracing.EventKeywords.None))
+        {
+            if (diagnosticId == 0)
+            {
+                diagnosticId = Interlocked.Increment(ref nextDiagnosticId);
+            }
+            telemetry = new HighlightingPass(diagnosticId, passVersion, old is null);
+        }
         int first = old?.StaleFrom ?? 0;
         int tail = int.MaxValue;
         foreach (Batch batch in since)
@@ -140,7 +151,7 @@ public sealed partial class TextMateHighlighter : IHighlighter, IBraceMatcher, I
         }
         // Held from here, the pass's own start holding nothing, until what it coloured lands on the UI thread.
         BackgroundWork.Begin();
-        UnawaitedWork.Observe(BackgroundWork.Unheld(() => Pass(old, text, first, tail, passVersion)).ContinueWith(done => OnUi(() =>
+        UnawaitedWork.Observe(BackgroundWork.Unheld(() => Pass(old, text, first, tail, passVersion, telemetry)).ContinueWith(done => OnUi(() =>
         {
             try
             {
@@ -162,16 +173,18 @@ public sealed partial class TextMateHighlighter : IHighlighter, IBraceMatcher, I
             {
                 BackgroundWork.End();
             }
-        }), TaskScheduler.Default));
+        }, telemetry, final: true), TaskScheduler.Default));
     }
 
     /// <summary>Reads the lines of <paramref name="text"/> from <paramref name="first"/> on, with the state the line above
     /// ended in, until a line ends in the state its old line did with only unchanged lines after it (the last
     /// <paramref name="tail"/> lines are those of <paramref name="old"/>'s text), and takes the rest from the old table.</summary>
-    private LineTable Pass(LineTable? old, TextSnapshot text, int first, int tail, int passVersion)
+    private LineTable Pass(LineTable? old, TextSnapshot text, int first, int tail, int passVersion, HighlightingPass? telemetry)
     {
+        telemetry?.Start();
         long began = Stopwatch.GetTimestamp();
         Tokenizer rules = grammar.Rules;
+        telemetry?.GrammarLoaded();
         int count = text.LineCount;
         int oldCount = old?.Count ?? 0;
         int delta = count - oldCount;
@@ -192,11 +205,15 @@ public sealed partial class TextMateHighlighter : IHighlighter, IBraceMatcher, I
             int until = Math.Min(count, line + LinesAtATime);
             int readFrom = line;
             bool converged = false;
+            long lockStarted = telemetry is null ? 0 : Stopwatch.GetTimestamp();
             lock (grammar.Gate)
             {
+                telemetry?.LockAcquired(lockStarted);
                 for (; line < until; line++)
                 {
-                    TokenLine read = Read(rules, text, line, state, scratch);
+                    telemetry?.Reading();
+                    TokenLine read = Read(rules, text, line, state, scratch, telemetry);
+                    telemetry?.LineRead();
                     built.Add(read);
                     state = read.End;
                     int next = line + 1;
@@ -230,13 +247,15 @@ public sealed partial class TextMateHighlighter : IHighlighter, IBraceMatcher, I
                 partial.AddRange(soFar, 0, soFar.Count);
                 Rest(partial, line);
                 LineTable progress = partial.Build(line);
-                OnUi(() => Show(progress, text, passVersion));
+                OnUi(() => Show(progress, text, passVersion), telemetry, final: false);
                 shown = Stopwatch.GetTimestamp();
             }
         }
         Interlocked.Increment(ref passes);
         Interlocked.Add(ref workTicks, Stopwatch.GetTimestamp() - began);
-        return built.Build(staleFrom);
+        LineTable result = built.Build(staleFrom);
+        telemetry?.Finish(count, staleFrom);
+        return result;
 
         // The lines past where a pass stopped keep what they had: blank where they changed, their old colours where not.
         void Rest(LineTableBuilder into, int from)
@@ -264,18 +283,21 @@ public sealed partial class TextMateHighlighter : IHighlighter, IBraceMatcher, I
     }
 
     /// <summary>One line's colours and the state it ends in.</summary>
-    private TokenLine Read(Tokenizer rules, TextSnapshot text, int line, StateStack? state, List<SyntaxSpan> scratch)
+    private TokenLine Read(Tokenizer rules, TextSnapshot text, int line, StateStack? state, List<SyntaxSpan> scratch, HighlightingPass? telemetry)
     {
         LineSpan span = text.GetLine(line);
         if (span.Length > LongestLine)
         {
+            telemetry?.SkipLine();
             return new TokenLine([], state);
         }
         // Tint accepts the line without its break and appends it in a reusable buffer.
         char[] chars = new char[span.Length];
         text.CopyTo(span.Start, chars.AsSpan(0, span.Length));
         rules.TimeBudget = LineLimit;
+        telemetry?.Tokenizing();
         ReadOnlySpan<EncodedToken> tokens = rules.TokenizeLineEncoded(chars.AsSpan(0, span.Length), state ?? StateStack.Initial, out StateStack next);
+        telemetry?.Tokenized(rules.StoppedEarly);
         scratch.Clear();
         for (int i = 0; i < tokens.Length; i++)
         {
@@ -298,8 +320,12 @@ public sealed partial class TextMateHighlighter : IHighlighter, IBraceMatcher, I
         return new TokenLine(scratch.Count == 0 ? [] : [.. scratch], next);
     }
 
-    private void OnUi(Action action)
+    private void OnUi(Action action, HighlightingPass? telemetry = null, bool final = false)
     {
+        if (telemetry is not null)
+        {
+            action = telemetry.Publication(action, final);
+        }
         if (ui is null)
         {
             action();

@@ -2,7 +2,7 @@
 
 This benchmark calls Passenger's real `Highlighters.For` / `TextMateHighlighter`, waits for its background work through a queued `SynchronizationContext`, and edits its real `TextDocument`. It is not an isolated regex benchmark. It does not start the IDE, render frames, launch language servers, or measure whole-IDE startup or typing latency.
 
-See [measured results and tradeoffs](RESULTS.md).
+See [measured results and tradeoffs](RESULTS.md), and the follow-up [production instrumentation and stage attribution](INSTRUMENTATION.md).
 
 ## Versions and scope
 

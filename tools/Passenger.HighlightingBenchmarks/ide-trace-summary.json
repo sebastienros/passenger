@@ -1,0 +1,111 @@
+{
+  "lostEvents": 0,
+  "sampledStacks": 1972,
+  "events": [
+    {
+      "name": "Publication",
+      "timestampMs": 824.638208,
+      "payload": {
+        "passId": 1,
+        "documentId": 1,
+        "version": 0,
+        "final": 0,
+        "frequency": 1000000000,
+        "queueTicks": 729250,
+        "callbackTicks": 106333,
+        "callbackAllocatedBytes": 288,
+        "sinceScheduledTicks": 115914125
+      }
+    },
+    {
+      "name": "Pass",
+      "timestampMs": 844.349208,
+      "payload": {
+        "passId": 1,
+        "documentId": 1,
+        "version": 0,
+        "initial": 1,
+        "frequency": 1000000000,
+        "workerQueueTicks": 631833,
+        "workerTicks": 134941917,
+        "workerAllocatedBytes": 19428696,
+        "grammarTicks": 39979542,
+        "grammarAllocatedBytes": 8134584,
+        "lockWaitTicks": 21626,
+        "tokenizerTicks": 91441349,
+        "tokenizerAllocatedBytes": 11048592,
+        "linePreparationTicks": 1748234,
+        "linePreparationAllocatedBytes": 150976,
+        "otherWorkerTicks": 1751166,
+        "otherWorkerAllocatedBytes": 94544,
+        "readLines": 697,
+        "skippedLines": 0,
+        "stoppedLines": 0,
+        "unknownStopStatusLines": 0,
+        "documentLines": 697,
+        "staleFrom": 697,
+        "complete": 1
+      }
+    },
+    {
+      "name": "Publication",
+      "timestampMs": 845.698458,
+      "payload": {
+        "passId": 1,
+        "documentId": 1,
+        "version": 0,
+        "final": 1,
+        "frequency": 1000000000,
+        "queueTicks": 1093625,
+        "callbackTicks": 156625,
+        "callbackAllocatedBytes": 352,
+        "sinceScheduledTicks": 137079833
+      }
+    },
+    {
+      "name": "Pass",
+      "timestampMs": 852.145791,
+      "payload": {
+        "passId": 2,
+        "documentId": 1,
+        "version": 1,
+        "initial": 0,
+        "frequency": 1000000000,
+        "workerQueueTicks": 27542,
+        "workerTicks": 305125,
+        "workerAllocatedBytes": 12536,
+        "grammarTicks": 500,
+        "grammarAllocatedBytes": 0,
+        "lockWaitTicks": 209,
+        "tokenizerTicks": 39459,
+        "tokenizerAllocatedBytes": 464,
+        "linePreparationTicks": 1833,
+        "linePreparationAllocatedBytes": 360,
+        "otherWorkerTicks": 263124,
+        "otherWorkerAllocatedBytes": 11712,
+        "readLines": 1,
+        "skippedLines": 0,
+        "stoppedLines": 0,
+        "unknownStopStatusLines": 0,
+        "documentLines": 697,
+        "staleFrom": 697,
+        "complete": 1
+      }
+    },
+    {
+      "name": "Publication",
+      "timestampMs": 857.578125,
+      "payload": {
+        "passId": 2,
+        "documentId": 1,
+        "version": 1,
+        "final": 1,
+        "frequency": 1000000000,
+        "queueTicks": 5401416,
+        "callbackTicks": 16667,
+        "callbackAllocatedBytes": 352,
+        "sinceScheduledTicks": 5765167
+      }
+    }
+  ]
+}
