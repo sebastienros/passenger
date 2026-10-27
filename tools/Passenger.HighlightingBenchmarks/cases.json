@@ -1,0 +1,52 @@
+[
+  {
+    "file": "xml.props",
+    "source": "Directory.Packages.props",
+    "repeat": 97
+  },
+  {
+    "file": "json.json",
+    "source": "src/Passenger.Lsp/WebServers/schemas/global.json",
+    "repeat": 112
+  },
+  {
+    "file": "yaml.yml",
+    "source": ".github/workflows/ci.yml",
+    "repeat": 32
+  },
+  {
+    "file": "markdown.md",
+    "source": "README.md",
+    "repeat": 23
+  },
+  {
+    "file": "html.html",
+    "source": "site/index.html",
+    "repeat": 14
+  },
+  {
+    "file": "css.css",
+    "source": "site/style.css",
+    "repeat": 24
+  },
+  {
+    "file": "javascript.js",
+    "source": "site/site.js",
+    "repeat": 58
+  },
+  {
+    "file": "shell.sh",
+    "source": "tools/package-mac.sh",
+    "repeat": 26
+  },
+  {
+    "file": "scss.scss",
+    "source": "tests/Passenger.Tests/FileColoursTests.cs:Sass",
+    "repeat": 588
+  },
+  {
+    "file": "less.less",
+    "source": "tests/Passenger.Tests/FileColoursTests.cs:Less",
+    "repeat": 588
+  }
+]

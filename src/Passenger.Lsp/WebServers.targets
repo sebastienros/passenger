@@ -67,7 +67,7 @@
   <!-- The servers become this project's output under web/, so every project that references this one carries them
        beside its own binaries. Not in a design-time build, which copies nothing and would run Passenger.NodePackages
        before anything has built it. -->
-  <Target Name="IncludeWebServers" BeforeTargets="AssignTargetPaths" DependsOnTargets="FetchWebServers" Condition="'$(DesignTimeBuild)' != 'true'">
+  <Target Name="IncludeWebServers" BeforeTargets="AssignTargetPaths" DependsOnTargets="FetchWebServers" Condition="'$(DesignTimeBuild)' != 'true' and '$(PassengerBenchmarkOnly)' != 'true'">
     <ItemGroup>
       <WebServersFile Include="$(WebServersFolder)node_modules/**/*" />
       <None Include="@(WebServersFile)" Link="web/node_modules/%(WebServersFile.RecursiveDir)%(WebServersFile.Filename)%(WebServersFile.Extension)"

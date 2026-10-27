@@ -1,0 +1,21 @@
+{
+  "baseline": "fa86d9d42dbb53a8067f06f212d80d09540a3fe4",
+  "candidate": "9c5b2d034f6385d5888bea59a0e9cd4d90ba1e47",
+  "historicalExperiment": "0f1ae0c6",
+  "sdk": "11.0.100-rc.3.26522.148",
+  "fixtures": {
+    "scss.scss": "f1544140a4a0c5a0b9c265e2169d11457c07aa0a356317fc866793ccd211a80e",
+    "markdown.md": "4891c1ac7cce9ef327e4c51217a43ec46c7e2058778cba0d3950bd8c531d4588",
+    "html.html": "f7aba07839abe0074203ce9a756eedaa238b470db22b0ae8ea6da29af9a951b4",
+    "xml.props": "c8af1f8c3f38bc1e798a1c1bb2562e9e260cb22687fd16447032666af6182d8a",
+    "less.less": "87a1aebde707b47ed2ed8121740301ee2336c072f04cd06e40a9ce5ee6958464",
+    "yaml.yml": "f9beee409fb9b3c39d39cf271ddb67ec019fac1b5ab966fcfa16ac535aef78a9",
+    "javascript.js": "ff96bdb09b8e9018f40695980038b1fb94bd7777cd8df7c4a50936655d1c5ae0",
+    "css.css": "f2c86f420fda0f6c11a87578d8ebd24c158d1e9e5f50ac6afe7cb366f5859554",
+    "json.json": "7751ae6576aaef0b4dba6b74923ed78a1b5e69797d110c0d6c0ea8852d0a7657",
+    "shell.sh": "6f946411b2a675e6cc6ea548b1bd5873679c297123c0d3ef5298a5a32ea0d333"
+  },
+  "rounds": 3,
+  "instrumentedRounds": 3,
+  "buildProperty": "PassengerBenchmarkOnly=true skips copying the unused web-language-server bundle in both checkouts; no server runs in the harness."
+}
